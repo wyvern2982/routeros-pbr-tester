@@ -2,8 +2,7 @@
 ARG ALPINE_VERSION=3.22
 FROM alpine:${ALPINE_VERSION}
 
-# trippy (binary: trip) is in Alpine community; CI smoke test fails if it is missing.
-RUN apk add --no-cache curl iproute2 mtr tini trippy
+RUN apk add --no-cache curl iproute2 mtr tini
 
 COPY --chmod=755 pbr/*.sh /opt/pbr/
 COPY --chmod=644 pbr/pbr.conf /opt/pbr/

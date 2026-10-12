@@ -39,8 +39,7 @@ jobs:
         run: |
           docker run --rm pbr-tester:test sh -c '
             set -e
-            for b in mtr trip curl ip tini; do command -v "$b"; done
-            trip --version
+            for b in mtr curl ip tini; do command -v "$b"; done
             sh /opt/pbr/report.sh
           '
 
